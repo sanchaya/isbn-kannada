@@ -36,7 +36,7 @@ router.get('/viewbooks',async(req,res)=>{
 router.get('/find/:search',async(req,res)=>{
     try{
         console.log("call");
-        const search = req.params.search;
+        const search = req.params.search.replace(/-/g, '');
         const data = await Book.findOne({isbn:search});
         if(!data){
             return res.status(200).json([]);
@@ -61,4 +61,21 @@ router.get('/count',async(req,res)=>{
     }
 })
 
+router.get('/removehyphen',async(req,res)=>{
+    try{
+        const books = await Book.find();
+        for(let book of books){
+            const isbnWithoutHyphen = book.isbn.replace(/-/g, '');
+            console.log(isbnWithoutHyphen);
+            // Update the book's ISBN in the database
+            await Book.findByIdAndUpdate(book._id, { isbn: isbnWithoutHyphen });
+        }
+
+    return res.status(200).json({message:"ISBN Updated successfully"});
+    }
+    catch(error){
+        console.error(error);
+        return res.status(500).json({message:"Internal Error"});
+    }
+})
 module.exports=router;
