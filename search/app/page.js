@@ -304,11 +304,11 @@ export default function Home() {
 
                     </button>
 
-                    <button
-                    className='fixed top-10 right-20'
+                    <div
+                    className='fixed bottom-10 left-1/2 transform -translate-x-1/2 bg-primary text-white rounded-full py-2 px-4 shadow-lg'
                     >
                         Total Books: {count}
-                    </button>
+                    </div>
                 </div>
 
 
