@@ -75,7 +75,7 @@ export default function Home() {
             console.log("call", page)
 
             const response = await fetch(
-                `http://localhost:8000/books/viewbooks?page=${page}`
+                `http://localhost:4021/books/viewbooks?page=${page}`
             );
             if (!response.ok) {
                 console.error(`HTTP error! Status: ${response.status}`);
@@ -141,7 +141,7 @@ export default function Home() {
     };
 
     const handleSearchClick = () => {
-        axios.get(`http://localhost:8000/books/find/${searchQuery}`)
+        axios.get(`http://localhost:4021/books/find/${searchQuery}`)
                 .then(response => {
                 console.log(response.data);
                 const fetchedData = response.data;
@@ -164,7 +164,7 @@ export default function Home() {
     const totalbooks = async()=>{
         try{
 
-            const response = await fetch('http://localhost:8000/books/count');
+            const response = await fetch('http://localhost:4021/books/count');
             if (!response.ok) {
                 console.error(`HTTP error! Status: ${response.status}`);
             }
