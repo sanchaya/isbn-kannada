@@ -2,7 +2,7 @@ module.exports = {
   apps : [{
     name: 'nextjs-app', // Name of your Next.js application
     script: 'node_modules/next/dist/bin/next', // Path to the Next.js CLI script
-    args: 'start' 
+    args: 'start -p 4200' 
   }],
 
   deploy : {
