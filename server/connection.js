@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 dotenv.config({ path: './.env' });
 
-const uri='mongodb://localhost:27017/search'
+const uri=process.env.URI
 const connectDB = async () => {
   try {
   
