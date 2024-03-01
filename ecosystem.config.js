@@ -6,7 +6,7 @@ module.exports = {
         name: 'nextjs-app',
         cwd: './search',  // Path to Next.js app folder
         script: 'node_modules/next/dist/bin/next',
-        args: 'start -p 4200',
+        args: 'start -p 4020',
       },
       {
         name: 'nodejs-app',
