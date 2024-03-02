@@ -25,7 +25,7 @@
      ```
    - Start the backend:
      ```bash
-     npm run start
+     node index.js
      ```
 
 3. **Setup Frontend:**
