@@ -5,8 +5,10 @@ import {useSortBy, useTable} from "react-table";
 import {BiChevronDown, BiChevronUp, BiSearch,BiX} from "react-icons/bi";
 import InfiniteScroll from "react-infinite-scroll-component";
 import axios from 'axios';
+import RazorPay from './components/razorpay';
+import Header from './components/header';
 
-export default function Home() {
+export default function Search() {
 
     const scrollRef = useRef(null);
 
@@ -211,9 +213,12 @@ export default function Home() {
 
     return (
         <>
-            <div style={{marginTop: "50px"}} ref={scrollRef} className={"h-[90vh] overflow-x-auto"}>
+            <div className='mt-2'><Header/></div>
+            <RazorPay/>
+            <div style={{marginTop: "40px"}} ref={scrollRef} className={"h-[90vh] overflow-x-auto"}>
+               
                 <div className="container mx-auto">
-
+                    
                     <div className="mb-4 w-50 mx-auto input-group">
 
                         <input
@@ -224,7 +229,7 @@ export default function Home() {
                             onChange={(e) => setSearchQuery(e.target.value)}
                         />
                         <button
-                            className="btn btn-primary"
+                            className="btn btn-secondary"
                           onClick={handleSearchClick}
                         >
                            <BiSearch/>
@@ -255,12 +260,12 @@ export default function Home() {
                                             {...column.getHeaderProps(
                                                 column.getSortByToggleProps()
                                             )}
-                                            className="px-2 py-2 text-sm sm:text-base bg-primary text-white"
+                                            className="px-2 py-2 text-sm sm:text-base  text-black"
                                         >
                                             {column.render("Header")}
-                                            {column.isSorted && (
+                                            {/* {column.isSorted && (
                                                 <span>{column.isSortedDesc ? " ⬇️ " : " ⬆️ "}</span>
-                                            )}
+                                            )} */}
                                         </th>
                                     ))}
                                 </tr>
@@ -305,7 +310,7 @@ export default function Home() {
                     </button>
 
                     <div
-                    className='fixed bottom-10 left-1/2 transform -translate-x-1/2 bg-primary text-white rounded-full py-2 px-4 shadow-lg'
+                    className='fixed bottom-10 left-1/2 transform -translate-x-1/2 bg-white text-black font-semibold rounded-full py-2 px-4 shadow-lg'
                     >
                         Total Books: {count}
                     </div>
