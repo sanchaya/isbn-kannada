@@ -29,10 +29,10 @@ export default function Search() {
 
     const columns = useMemo(
         () => [
-            {
-                Header: "S.No",
-                accessor: (row, index) => index + 1, // Automatically generate serial number
-            },
+            // {
+            //     Header: "S.No",
+            //     accessor: (row, index) => index + 1, // Automatically generate serial number
+            // },
             {
                 Header: "Book Title",
                 accessor: "title",
@@ -158,10 +158,10 @@ export default function Search() {
         
     };
 
-    const handleClearClick = () => {
-        setSearchQuery('');
-        setVisibleData([]);  // Reset filterData when clearing the search
-    };
+    // const handleClearClick = () => {
+    //     setSearchQuery('');
+    //     setVisibleData([]);  // Reset filterData when clearing the search
+    // };
 
     const totalbooks = async()=>{
         try{
@@ -211,10 +211,17 @@ export default function Search() {
         }
     }); // Add dependencies as needed
 
+    useEffect(() => {
+        // Check if the search query is empty
+        if (searchQuery === '') {
+            setVisibleData([]); // Clear the search result
+        }
+    }, [searchQuery]);
+
     return (
         <>
-            <div className='mt-2'><Header/></div>
-            <RazorPay/>
+            <Header/>
+         
             <div style={{marginTop: "40px"}} ref={scrollRef} className={"h-[90vh] overflow-x-auto"}>
                
                 <div className="container mx-auto">
@@ -227,28 +234,34 @@ export default function Search() {
                             className="form-control mx-auto w-50"
                             value={searchQuery}
                             onChange={(e) => setSearchQuery(e.target.value)}
+                            onKeyDown={(e) => {
+                                if (e.key === 'Enter') {
+                                    handleSearchClick(); // Call the search function
+                                }
+                            }}
                         />
-                        <button
+                        {/* <button
                             className="btn btn-secondary"
                           onClick={handleSearchClick}
                         >
                            <BiSearch/>
-                        </button>
-                        {searchQuery && (
+                        </button> */}
+                        {/* {searchQuery && (
                             <button
                                 className="btn btn-secondary"
                                 onClick={handleClearClick}
                             >
                                 <BiX/>
                             </button>
-                        )}
+                        )} */}
                     </div>
 
-                    <div className=" " >
+                    <div className="justify-center table-responsive" style={{ overflowX: 'auto' }}>
                         <table
                             {...getTableProps()}
-                            className="table table-bordered table-hover"
+                            className="table table-striped "
                             style={{maxWidth: "100%"}}
+                           
 
                         >
                             <thead className={"sticky top-0"}>
@@ -260,7 +273,7 @@ export default function Search() {
                                             {...column.getHeaderProps(
                                                 column.getSortByToggleProps()
                                             )}
-                                            className="px-2 py-2 text-sm sm:text-base  text-black"
+                                            className=" py-1 font-sm text-sm sm:text-base  text-black"
                                         >
                                             {column.render("Header")}
                                             {/* {column.isSorted && (
@@ -281,9 +294,11 @@ export default function Search() {
                                                 <td
                                                     key={index}
                                                     {...cell.getCellProps()}
-                                                    className="px-3 py-2 text-sm sm:text-base"
+                                                    className=" py-1 font-sm text-sm sm:text-base"
                                                 >
+                                                    
                                                     {cell.render("Cell")}
+                                                
                                                 </td>
                                             );
                                         })}
