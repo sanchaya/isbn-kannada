@@ -8,7 +8,7 @@ export default function About() {
     return(
         <>
         <Header/>
-    
+        <div className='flex justify-center mt-5'><RazorPay/></div>
       
         <div className='flex flex-col justify-center items-center '>    
         <h1 className='mb-10 mt-10'>ನಮ್ಮ ಬಗ್ಗೆ </h1>

@@ -51,7 +51,7 @@ export default function Search() {
                 accessor: "publisher",
             },
             {
-                Header: "Author/Editor Name",
+                Header: "Author/Editor",
                 accessor: "author_editor",
             },
             {
@@ -221,7 +221,7 @@ export default function Search() {
     return (
         <>
             <Header/>
-         
+            <div className='flex justify-center mt-5'><RazorPay/></div>
             <div style={{marginTop: "40px"}} ref={scrollRef} className={"h-[90vh] overflow-x-auto"}>
                
                 <div className="container mx-auto">

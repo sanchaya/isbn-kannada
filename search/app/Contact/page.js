@@ -9,7 +9,7 @@ export default function Contact() {
         <>
         <div className='mb-20 '>
             <Header/>
-      
+            <div className='flex justify-center mt-5'><RazorPay/></div>
         
         </div>
         <div className='flex justify-center items-center gap-4 mt-20'>

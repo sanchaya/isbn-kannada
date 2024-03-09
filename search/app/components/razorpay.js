@@ -1,23 +1,33 @@
-// "use client";
-// import 'bootstrap/dist/css/bootstrap.min.css';
-// import React from "react";
-// import Image from 'next/image';
-// import Link from 'next/link';
-// export default function RazorPay() {
-    
-//     return(
-//         <>
-//         <div className='flex justify-center'>
-//             <Link href="https://razorpay.com/payment-button/pl_FTB1pZqrFP6jrt/view/?utm_source=payment_button&utm_medium=button&utm_campaign=payment_button">
-//             <Image
-//             src="/razorpay.jpg"
-//             alt="razorpay"
-//             width={250}
-//             height={250}
-//             />
-//             </Link>
-           
-//         </div>
-//         </>
-//     )
-// }
+"use client"
+import React, { useEffect } from 'react';
+
+
+const RazorpayButton = () => {
+    useEffect(() => {
+        const script = document.createElement('script');
+        script.src = 'https://checkout.razorpay.com/v1/payment-button.js';
+        script.setAttribute('data-payment_button_id', 'pl_FTB1pZqrFP6jrt');
+        script.async = true;
+
+        const formElement = document.getElementById('razorpay-form');
+        if (formElement) {
+            formElement.appendChild(script);
+        } else {
+            console.error('Form element with id "razorpay-form" not found.');
+        }
+
+        return () => {
+            if (formElement && formElement.contains(script)) {
+                formElement.removeChild(script);
+            }
+        };
+    }, []);
+
+    return (
+        <form id="razorpay-form">
+            {/* Other form elements can be added here */}
+        </form>
+    );
+};
+
+export default RazorpayButton;

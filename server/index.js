@@ -11,13 +11,13 @@ const cookieParser = require('cookie-parser');
 connectDB().then(()=>{
 
     const bookRouter = require('./bookRouter');
-    app.use(cors());
+        app.use(cors());
     app.options('*', cors());
     app.use(bodyParser.urlencoded({extended:true}));
     app.use(bodyParser.json());
     app.use(cookieParser());
     app.use('/books',bookRouter);
-    
+   
     app.get('/',function(req,res){
         res.send('Server is running');
     });
