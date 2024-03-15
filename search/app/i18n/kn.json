@@ -1,0 +1,13 @@
+{
+    "header.home":"Home",
+    "header.about":"About Us",
+    "header.contact":"Contact Us",
+    "theader.title":"ಶೀರ್ಷಿಕೆ ",
+    "theader.isbn":"ISBN",
+    "theader.language":"Language",
+    "theader.publisher":"ಪ್ರಕಾಶಕರು",
+    "theader.author":"ಲೇಖಕ / ಕಿ",
+    "theader.date":"Date",
+    "search.field":"Enter ISBN...",
+    "total":"Total Books"
+}

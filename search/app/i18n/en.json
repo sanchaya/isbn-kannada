@@ -1,0 +1,13 @@
+{
+    "header.home":"Home",
+    "header.about":"About Us",
+    "header.contact":"Contact Us",
+    "theader.title":"Book Title",
+    "theader.isbn":"ISBN",
+    "theader.language":"Language",
+    "theader.publisher":"Publisher",
+    "theader.author":"Author/Publisher",
+    "theader.date":"Date",
+    "search.field":"Enter ISBN...",
+    "total":"Total Books"
+}
