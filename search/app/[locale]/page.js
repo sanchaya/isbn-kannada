@@ -5,83 +5,89 @@ import {useSortBy, useTable} from "react-table";
 import axios from 'axios';
 import RazorPay from '../components/razorpay';
 import Header from '../components/header';
-import initTranslations from '../i18n';
+
 import TranslationsProvider from '../components/TranslationProvider';
+
 import { useTranslation } from 'react-i18next';
+
 import LanguageChanger from '../components/LanguageChanger';
-const i18nNamespaces = ['default'];
 
-export default   function Search({ params: { locale } }) {
 
+const Namespaces = ['default','home','table'];
+
+export default  function Search({ params: { locale } }) {
+   
+    const {t}=useTranslation();
+    
     const [visibleData, setVisibleData] = useState([]); // Data currently visible in the table
     const [searchQuery, setSearchQuery] = useState('');
     const [count, setCount] = useState(0);
-  
-    const { t } = useTranslation();
-  
-    // const columns = useMemo(
-       
-    //     () => [
-           
-    //         {
-               
-    //             Header: 'title',
-    //             accessor: "title",
-    //         },
-    //         {
-    //             Header: "ISBN",
-    //             accessor: "isbn",
-    //         },
-    //         {
-    //             Header: "Language",
-    //             accessor: "language",
-    //         },
-
-    //         {
-    //             Header: "Publisher",
-    //             accessor: "publisher",
-    //         },
-    //         {
-    //             Header: "Author/Editor",
-    //             accessor: "author_editor",
-    //         },
-    //         {
-    //             Header: "Date",
-    //             accessor: (row) => {
-    //                 const fullDate = row.Date;
-    //                 if (fullDate) {
-
-    //                     const year = new Date(fullDate).getFullYear();
-    //                     return year;
-    //                 }
-    //                 return "";
-    //             }
-    //         },
-
-    //     ],
-    //     []
-    // );
-    const tableHeaderNames = [
-        { Header: t('title'), accessor: 'title' },
-        { Header: t('theader.isbn'), accessor: 'isbn' },
-        { Header: t('theader.language'), accessor: 'language' },
-        { Header: t('theader.publisher'), accessor: 'publisher' },
-        { Header: t('theader.author'), accessor: 'author_editor' },
-        {
-            Header: t('theader.date'),
-            accessor: (row) => {
-                const fullDate = row.Date;
-                if (fullDate) {
-                    const year = new Date(fullDate).getFullYear();
-                    return year;
-                }
-                return '';
-            },
-        },
-    ];
+   
     
-    // Use the table header names
-    const columns = useMemo(() => tableHeaderNames, [t]);
+  
+    const columns = useMemo(
+       
+        () => [
+           
+            {
+               
+                Header: 'title',
+                accessor: "title",
+            },
+            {
+                Header: "ISBN",
+                accessor: "isbn",
+            },
+            {
+                Header: "Language",
+                accessor: "language",
+            },
+
+            {
+                Header: "Publisher",
+                accessor: "publisher",
+            },
+            {
+                Header: "Author/Editor",
+                accessor: "author_editor",
+            },
+            {
+                Header: "Date",
+                accessor: (row) => {
+                    const fullDate = row.Date;
+                    if (fullDate) {
+
+                        const year = new Date(fullDate).getFullYear();
+                        return year;
+                    }
+                    return "";
+                }
+            },
+
+        ],
+        []
+    );
+    // const tableHeaderNames = [
+    //     { Header: t('title'), accessor: 'title' },
+    //     { Header: t('theader.isbn'), accessor: 'isbn' },
+    //     { Header: t('theader.language'), accessor: 'language' },
+    //     { Header: t('theader.publisher'), accessor: 'publisher' },
+    //     { Header: t('theader.author'), accessor: 'author_editor' },
+    //     {
+    //         Header: t('theader.date'),
+    //         accessor: (row) => {
+    //             const fullDate = row.Date;
+    //             if (fullDate) {
+    //                 const year = new Date(fullDate).getFullYear();
+    //                 return year;
+    //             }
+    //             return '';
+    //         },
+    //     },
+    // ];
+    
+    // // Use the table header names
+    // const columns = useMemo(() => tableHeaderNames, [t]);
 
 
   
@@ -149,6 +155,7 @@ export default   function Search({ params: { locale } }) {
         <>
             <Header/>
             <LanguageChanger/>
+            
             <div className='flex justify-center mt-5'><RazorPay/></div>
             <div style={{marginTop: "40px"}} >
                
@@ -156,9 +163,9 @@ export default   function Search({ params: { locale } }) {
                     
                     <div className="mb-4 w-50 mx-auto input-group">
     <TranslationsProvider
-    namespaces={i18nNamespaces}
+    namespaces={Namespaces}
     locale={locale}
-   
+    
     >
 
 </TranslationsProvider>
@@ -234,7 +241,7 @@ export default   function Search({ params: { locale } }) {
                     <div
                     className='fixed bottom-10 left-1/2 transform -translate-x-1/2 bg-white text-black font-semibold rounded-full py-2 px-4 shadow-lg'
                     >
-                        {t('total')}: {count}
+                        'total': {count}
                     </div>
                 </div>
 

@@ -4,13 +4,13 @@ import React,{useState} from "react";
 import Image from 'next/image';
 import Link from 'next/link';
 import initTranslations from '../i18n';
-import TranslationsProvider from './TranslationProvider';
+import TranslationsProvider from '../components/TranslationProvider';
 import { useTranslation } from 'react-i18next';
 const i18nNamespaces = ['default'];
 
 export default  function Header() {
     const [showMenu, setShowMenu] = useState(false);
-    const { t, resources } = useTranslation();
+
 
     return(
         <>
@@ -19,9 +19,9 @@ export default  function Header() {
         <div className={`hidden sm:flex flex-row  shadow-lg py-2 justify-center w-full sm:w-auto ml-2`}>
                 <div className="flex items-center mx-auto gap-4">
                 <Image src="/sanchaya.jpg" alt="sanchaya" width={85} height={40}/>
-                <Link href={"/"} className="no-underline text-black">{t('header.home')}</Link>
-                <Link href="/About" className="no-underline text-black">{t('header.about')}</Link>
-                <Link href="/Contact" className="no-underline text-black">{t('header.contact')}</Link>
+                <Link href={"/"} className="no-underline text-black">'header.home'</Link>
+                <Link href="/About" className="no-underline text-black">header.about</Link>
+                <Link href="/Contact" className="no-underline text-black">header.contact</Link>
                 </div>
                 <div className='flex items-center mr-auto gap-4'>
                 <Link href="https://www.facebook.com/kannadasanchaya">
@@ -58,9 +58,9 @@ export default  function Header() {
             
             <nav className={showMenu ? "flex flex-col gap-3 shadow-lg py-2 justify-center items-center w-full sm:hidden" : "hidden"}>
                 
-                <Link href="/" className="no-underline text-black">{t('header.home')}</Link>
-                <Link href="/About" className="no-underline text-black">{t('header.about')}</Link>
-                <Link href="/Contact" className="no-underline text-black">{t('header.contact')}</Link>
+                <Link href="/" className="no-underline text-black">header.home</Link>
+                <Link href="/About" className="no-underline text-black">'header.about</Link>
+                <Link href="/Contact" className="no-underline text-black">header.contact</Link>
                 <Link href="https://www.facebook.com/kannadasanchaya">
                     <Image src="/facebook.png" alt="facebook" width={35} height={30} />
                 </Link>

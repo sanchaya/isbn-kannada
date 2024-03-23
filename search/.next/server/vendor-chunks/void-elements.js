@@ -18,6 +18,16 @@ exports.modules = {
 
 eval("/**\n * This file automatically generated from `pre-publish.js`.\n * Do not manually edit.\n */\n\nmodule.exports = {\n  \"area\": true,\n  \"base\": true,\n  \"br\": true,\n  \"col\": true,\n  \"embed\": true,\n  \"hr\": true,\n  \"img\": true,\n  \"input\": true,\n  \"link\": true,\n  \"meta\": true,\n  \"param\": true,\n  \"source\": true,\n  \"track\": true,\n  \"wbr\": true\n};\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKHNzcikvLi9ub2RlX21vZHVsZXMvdm9pZC1lbGVtZW50cy9pbmRleC5qcyIsIm1hcHBpbmdzIjoiQUFBQTtBQUNBO0FBQ0E7QUFDQTs7QUFFQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQSIsInNvdXJjZXMiOlsid2VicGFjazovL3NlYXJjaC8uL25vZGVfbW9kdWxlcy92b2lkLWVsZW1lbnRzL2luZGV4LmpzPzY4OGIiXSwic291cmNlc0NvbnRlbnQiOlsiLyoqXG4gKiBUaGlzIGZpbGUgYXV0b21hdGljYWxseSBnZW5lcmF0ZWQgZnJvbSBgcHJlLXB1Ymxpc2guanNgLlxuICogRG8gbm90IG1hbnVhbGx5IGVkaXQuXG4gKi9cblxubW9kdWxlLmV4cG9ydHMgPSB7XG4gIFwiYXJlYVwiOiB0cnVlLFxuICBcImJhc2VcIjogdHJ1ZSxcbiAgXCJiclwiOiB0cnVlLFxuICBcImNvbFwiOiB0cnVlLFxuICBcImVtYmVkXCI6IHRydWUsXG4gIFwiaHJcIjogdHJ1ZSxcbiAgXCJpbWdcIjogdHJ1ZSxcbiAgXCJpbnB1dFwiOiB0cnVlLFxuICBcImxpbmtcIjogdHJ1ZSxcbiAgXCJtZXRhXCI6IHRydWUsXG4gIFwicGFyYW1cIjogdHJ1ZSxcbiAgXCJzb3VyY2VcIjogdHJ1ZSxcbiAgXCJ0cmFja1wiOiB0cnVlLFxuICBcIndiclwiOiB0cnVlXG59O1xuIl0sIm5hbWVzIjpbXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///(ssr)/./node_modules/void-elements/index.js\n");
 
+/***/ }),
+
+/***/ "(rsc)/./node_modules/void-elements/index.js":
+/*!*********************************************!*\
+  !*** ./node_modules/void-elements/index.js ***!
+  \*********************************************/
+/***/ ((module) => {
+
+eval("/**\n * This file automatically generated from `pre-publish.js`.\n * Do not manually edit.\n */\n\nmodule.exports = {\n  \"area\": true,\n  \"base\": true,\n  \"br\": true,\n  \"col\": true,\n  \"embed\": true,\n  \"hr\": true,\n  \"img\": true,\n  \"input\": true,\n  \"link\": true,\n  \"meta\": true,\n  \"param\": true,\n  \"source\": true,\n  \"track\": true,\n  \"wbr\": true\n};\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKHJzYykvLi9ub2RlX21vZHVsZXMvdm9pZC1lbGVtZW50cy9pbmRleC5qcyIsIm1hcHBpbmdzIjoiQUFBQTtBQUNBO0FBQ0E7QUFDQTs7QUFFQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQSIsInNvdXJjZXMiOlsid2VicGFjazovL3NlYXJjaC8uL25vZGVfbW9kdWxlcy92b2lkLWVsZW1lbnRzL2luZGV4LmpzPzk5M2IiXSwic291cmNlc0NvbnRlbnQiOlsiLyoqXG4gKiBUaGlzIGZpbGUgYXV0b21hdGljYWxseSBnZW5lcmF0ZWQgZnJvbSBgcHJlLXB1Ymxpc2guanNgLlxuICogRG8gbm90IG1hbnVhbGx5IGVkaXQuXG4gKi9cblxubW9kdWxlLmV4cG9ydHMgPSB7XG4gIFwiYXJlYVwiOiB0cnVlLFxuICBcImJhc2VcIjogdHJ1ZSxcbiAgXCJiclwiOiB0cnVlLFxuICBcImNvbFwiOiB0cnVlLFxuICBcImVtYmVkXCI6IHRydWUsXG4gIFwiaHJcIjogdHJ1ZSxcbiAgXCJpbWdcIjogdHJ1ZSxcbiAgXCJpbnB1dFwiOiB0cnVlLFxuICBcImxpbmtcIjogdHJ1ZSxcbiAgXCJtZXRhXCI6IHRydWUsXG4gIFwicGFyYW1cIjogdHJ1ZSxcbiAgXCJzb3VyY2VcIjogdHJ1ZSxcbiAgXCJ0cmFja1wiOiB0cnVlLFxuICBcIndiclwiOiB0cnVlXG59O1xuIl0sIm5hbWVzIjpbXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///(rsc)/./node_modules/void-elements/index.js\n");
+
 /***/ })
 
 };
